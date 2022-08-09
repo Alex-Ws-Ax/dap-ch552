@@ -651,7 +651,7 @@ void Config_Uart1(UINT8 *cfg_uart)
     *((UINT8 *)&uart1_buad + 2) = cfg_uart[1];
     *((UINT8 *)&uart1_buad + 3) = cfg_uart[0];
     IE_UART1 = 0;
-    SBAUD1 = 256 - FREQ_SYS / 16 / uart1_buad;
+    SBAUD1 = 0 - FREQ_SYS / 16 / uart1_buad;
     IE_UART1 = 1;
 }
 

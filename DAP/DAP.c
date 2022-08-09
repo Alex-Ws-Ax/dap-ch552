@@ -113,10 +113,10 @@ static UINT8I DAP_HostStatus(const UINT8 *req, UINT8 *res)
     switch (*req)
     {
     case DAP_DEBUGGER_CONNECTED:
-        LED = ((*(req + 1) & 1U));
+        LED = !((*(req + 1) & 1U));
         break;
     case DAP_TARGET_RUNNING:
-        LED = ((*(req + 1) & 1U));
+        LED = !((*(req + 1) & 1U));
         break;
     default:
         *res = DAP_ERROR;
